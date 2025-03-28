@@ -2,7 +2,7 @@
 
 ## Topiary
 
-https://github.com/blindFS/topiary-nushell
+https://github.com/tweag/topiary
 
 ```shell
 # Add topiary.exe to PATH
