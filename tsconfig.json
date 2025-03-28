@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "checkJs": true,
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "outDir": "out",
+    "sourceMap": false,
+    "strict": false,
+    "rootDir": "./src",
+    "allowSyntheticDefaultImports": true,
+    "paths": {}
+  },
+  "exclude": ["node_modules", "lib"],
+  "include": ["src", "types"]
+}

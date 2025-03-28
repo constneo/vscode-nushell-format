@@ -1,0 +1,27 @@
+{
+  // 使用 IntelliSense 了解相关属性。
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NushellFormat",
+      "type": "extensionHost",
+      "request": "launch",
+      "internalConsoleOptions": "openOnSessionStart",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--disable-extensions",
+        "${workspaceRoot}/test"
+      ],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "env": {
+        // "TOPIARY_CONFIG_FILE": "e:/config/topiary/languages.ncl",
+        // "TOPIARY_LANGUAGE_DIR": "e:/config/topiary/languages"
+      }
+      // "smartStep": true,
+      // "preLaunchTask": "npm: tsc:watch"
+    }
+  ]
+}

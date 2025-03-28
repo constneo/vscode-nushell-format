@@ -1,0 +1,85 @@
+{
+  "name": "vscode-nushell-format",
+  "displayName": "Format Nushell With TopiaryCLI",
+  "version": "0.1.7",
+  "publisher": "constneo",
+  "description": "Use TopiaryCLI format .nu file.",
+  "type": "module",
+  "author": "constneo",
+  "categories": [
+    "Formatters"
+  ],
+  "icon": "assets/icon.dark.png",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "main": "./src/extension.cjs",
+  "activationEvents": [
+    "onLanguage:nushell"
+  ],
+  "scripts": {},
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/constneo/vscode-nushell-format"
+  },
+  "homepage": "https://github.com/constneo/vscode-nushell-format",
+  "contributes": {
+    "languages": [
+      {
+        "id": "nushell",
+        "aliases": [
+          "nushell",
+          "nu"
+        ],
+        "extensions": [
+          ".nu"
+        ],
+        "icon": {
+          "light": "assets/icon.light.png",
+          "dark": "assets/icon.dark.png"
+        }
+      }
+    ],
+    "menus": {
+      "commandPalette": [],
+      "editor/context": []
+    },
+    "commands": [
+      {
+        "command": "vscode-nushell-format.format",
+        "title": "Format Nushell"
+      }
+    ],
+    "keybindings": [],
+    "configuration": {
+      "id": "vscode-nushell-format",
+      "type": "object",
+      "order": 20,
+      "title": "Nushell Format With TopiaryCLI",
+      "properties": {
+        "vscode-nushell-format.notify": {
+          "type": "boolean",
+          "default": true,
+          "description": "Welcome notify"
+        },
+        "vscode-nushell-format.TOPIARY_CONFIG_FILE": {
+          "type": "string",
+          "default": "",
+          "description": "Configuration file [env: TOPIARY_CONFIG_FILE]"
+        },
+        "vscode-nushell-format.TOPIARY_LANGUAGE_DIR": {
+          "type": "string",
+          "default": "",
+          "description": "[env: TOPIARY_LANGUAGE_DIR]"
+        }
+      }
+    }
+  },
+  "dependencies": {},
+  "extensionDependencies": [],
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@types/vscode": "^1.98.0"
+  }
+}
