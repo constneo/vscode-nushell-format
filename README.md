@@ -1,5 +1,7 @@
 # Format Nushell With TopiaryCLI
 
+**This extension only supports vscode desktop**
+
 ## Topiary
 
 https://github.com/tweag/topiary
@@ -12,7 +14,7 @@ $env.TOPIARY_HOME = "e:/dev/topiary/bin"
 path add $env.TOPIARY_HOME
 ```
 
-## Format nushell with Topiary
+## Clone the TopiaryCLI to the local
 
 ```shell
 cd e:/config
@@ -20,21 +22,20 @@ mkdir topiary
 git clone https://github.com/blindFS/topiary-nushell topiary
 ```
 
-## Options
-
 **Priority Level**: vscode plugin config > environment
 
 Add `TOPIARY_CONFIG_FILE` and `TOPIARY_LANGUAGE_DIR` to environment.
 
 ```shell
 $env.TOPIARY_CONFIG_FILE  = "e:/config/topiary/languages.ncl"
-$env.TOPIARY_LANGUAGE_DIR  ="e:/config/topiary/languages.ncl"
+$env.TOPIARY_LANGUAGE_DIR  ="e:/config/topiary/languages"
 ```
 
 Or add config to `.vscode/settings.json`
 
+Like that:
+
 ```json
-// .vscode/settings.json
 {
   "[nushell]": {
     "editor.defaultFormatter": "constneo.vscode-nushell-format"

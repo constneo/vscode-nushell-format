@@ -1,6 +1,6 @@
 import { exec } from "child_process"
 import vscode from "./vscode.js"
-import { ENV, ID } from "./constans.js"
+import { CONFIG, EXNTENSION_ID } from "./constans.js"
 import fs from "node:fs"
 
 /**
@@ -16,36 +16,46 @@ export function format(fileName) {
 }
 
 /**
+ * @typedef {{TOPIARY_CONFIG_FILE:string,TOPIARY_LANGUAGE_DIR:string,notify:boolean}} Configuration
+ */
+
+/**
  * 检查环境变量以及配置
+ * @returns {Promise<Configuration>}
  */
 export function getConfig() {
   return new Promise((resolve, reject) => {
-    const config = vscode.workspace.getConfiguration(ID)
+    const config = vscode.workspace.getConfiguration(EXNTENSION_ID)
+    console.log("config:", config)
 
-    const configFile = config.get(ENV.file)
-    console.log("[plugin TOPIARY_CONFIG_FILE ]->", configFile)
+    const configFile = config.get(CONFIG.TOPIARY_CONFIG_FILE)
+    console.log("[plugin config TOPIARY_CONFIG_FILE ]->", configFile)
+
     if (fs.existsSync(configFile)) {
       process.env.TOPIARY_CONFIG_FILE = configFile
     }
 
-    const dir = config.get(ENV.dir)
-    console.log("[plugin TOPIARY_LANGUAGE_DIR ]->", dir)
+    const languageDir = config.get(CONFIG.TOPIARY_LANGUAGE_DIR)
+    console.log("[plugin config TOPIARY_LANGUAGE_DIR ]->", languageDir)
 
-    if (fs.existsSync(dir)) {
-      process.env.TOPIARY_LANGUAGE_DIR = dir
+    if (fs.existsSync(languageDir)) {
+      process.env.TOPIARY_LANGUAGE_DIR = languageDir
     }
 
     const { TOPIARY_CONFIG_FILE, TOPIARY_LANGUAGE_DIR } = process.env
 
+    console.log("[env TOPIARY_LANGUAGE_DIR ]->", process.env.TOPIARY_CONFIG_FILE)
+    console.log("[env TOPIARY_CONFIG_FILE ]->", process.env.TOPIARY_LANGUAGE_DIR)
+
     if (!TOPIARY_CONFIG_FILE) {
-      reject(`Environment variable not set:${ENV.file} `)
+      reject(`Environment variable not set:${CONFIG.TOPIARY_CONFIG_FILE} `)
     }
 
     if (!TOPIARY_LANGUAGE_DIR) {
-      reject(`Environment variable not set:${ENV.dir}`)
+      reject(`Environment variable not set:${CONFIG.TOPIARY_LANGUAGE_DIR}`)
     }
 
-    const notify = config.get("notify")
+    const notify = config.get(CONFIG.notify)
 
     resolve({
       TOPIARY_CONFIG_FILE,

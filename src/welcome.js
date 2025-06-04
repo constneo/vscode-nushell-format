@@ -8,7 +8,7 @@ export default async () => {
     console.log("[ config ]->", config)
 
     if (config.notify) {
-      vscode.window.showInformationMessage(`Thank you for using Format Nushell With TopiaryCLI .`)
+      vscode.window.showInformationMessage(`Thank you for using Format Nushell With TopiaryCLI.`)
     }
   } catch (error) {
     vscode.window.showErrorMessage(`Failed to get Format Nushell With TopiaryCLI config.`)

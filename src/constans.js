@@ -1,9 +1,12 @@
 // 当前插件的唯一标识符,应该与 package.json中的 configuration.id相对应
-export const ID = "vscode-nushell-format"
+export const EXNTENSION_ID = "vscode-nushell-format"
 
-export const ENV = {
-  file: "TOPIARY_CONFIG_FILE",
-  dir: "TOPIARY_LANGUAGE_DIR"
+export const DISPLAY_NAME = ""
+
+export const CONFIG = {
+  TOPIARY_CONFIG_FILE: "TOPIARY_CONFIG_FILE",
+  TOPIARY_LANGUAGE_DIR: "TOPIARY_LANGUAGE_DIR",
+  notify: "notify"
 }
 
 export const COMMANDS = {

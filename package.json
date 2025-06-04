@@ -1,7 +1,7 @@
 {
   "name": "vscode-nushell-format",
   "displayName": "Format Nushell With TopiaryCLI",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "constneo",
   "description": "Use TopiaryCLI format .nu file.",
   "type": "module",
@@ -13,11 +13,13 @@
   "engines": {
     "vscode": "^1.98.0"
   },
-  "main": "./src/extension.cjs",
+  "main": "./src/extension.js",
   "activationEvents": [
     "onLanguage:nushell"
   ],
-  "scripts": {},
+  "scripts": {
+    "pack": "vsce package --no-dependencies"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -56,22 +58,22 @@
       "id": "vscode-nushell-format",
       "type": "object",
       "order": 20,
-      "title": "Nushell Format With TopiaryCLI",
+      "title": "Format Nushell With TopiaryCLI",
       "properties": {
         "vscode-nushell-format.notify": {
           "type": "boolean",
-          "default": true,
-          "description": "Welcome notify"
+          "default": false,
+          "description": "Thank you for using Format Nushell With TopiaryCLI."
         },
         "vscode-nushell-format.TOPIARY_CONFIG_FILE": {
           "type": "string",
           "default": "",
-          "description": "Configuration file [env: TOPIARY_CONFIG_FILE]"
+          "description": "Configuration file [env:TOPIARY_CONFIG_FILE]"
         },
         "vscode-nushell-format.TOPIARY_LANGUAGE_DIR": {
           "type": "string",
           "default": "",
-          "description": "[env: TOPIARY_LANGUAGE_DIR]"
+          "description": "[env:TOPIARY_LANGUAGE_DIR]"
         }
       }
     }

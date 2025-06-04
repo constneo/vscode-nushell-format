@@ -6,9 +6,11 @@
 
 # topiary  format  e:\code\vscode\nushell-fmt\test\example.nu
 
-(
-  topiary format
-  --configuration E:/config/topiary/languages.ncl
-  # --language nu
-  e:\code\vscode\nushell-fmt\test\example.nu
-)
+export def main () {
+  (
+    topiary format
+    --configuration E:/config/topiary/languages.ncl
+    # --language nu
+    e:/code/vscode/nushell-fmt/test/example.nu
+  )
+}
