@@ -8,7 +8,7 @@ import fs from "node:fs"
  */
 export function format(fileName) {
   return new Promise((resolve, reject) => {
-    exec(`topiary  format  ${fileName}`, (error, stdout, stderr) => {
+    exec(`topiary  format  "${fileName}"`, (error, stdout, stderr) => {
       if (error) reject(`topiary error ${stderr || error.message}`)
       else resolve(stdout)
     })
