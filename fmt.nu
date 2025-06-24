@@ -4,13 +4,13 @@
 # print $env.TOPIARY_CONFIG_FILE
 # print $env.TOPIARY_LANGUAGE_DIR
 
-# topiary  format  e:\code\vscode\nushell-fmt\test\example.nu
+# topiary  format  E:/code/vscode/nushell-format/test/example.nu
 
 export def main () {
   (
     topiary format
     --configuration E:/config/topiary/languages.ncl
     # --language nu
-    e:/code/vscode/nushell-fmt/test/example.nu
+    E:/code/vscode/nushell-format/test/example.nu
   )
 }

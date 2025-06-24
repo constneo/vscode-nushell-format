@@ -1,7 +1,7 @@
 {
   "name": "vscode-nushell-format",
   "displayName": "Format Nushell With TopiaryCLI",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "publisher": "constneo",
   "description": "Use TopiaryCLI format .nu file.",
   "type": "module",
